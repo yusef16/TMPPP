@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\member_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\member_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\inscriere membri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\inscriere membri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\tmpp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Tmpp\\Form1.Designer.cs",
@@ -48,33 +48,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "Inscriere membri.cs",
+              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Inscriere membri.cs",
+              "RelativeDocumentMoniker": "Tmpp\\Inscriere membri.cs",
+              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Inscriere membri.cs",
+              "RelativeToolTip": "Tmpp\\Inscriere membri.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T21:22:14.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
+              "RelativeDocumentMoniker": "Tmpp\\Form1.cs",
+              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
+              "RelativeToolTip": "Tmpp\\Form1.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAADwv0IAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T20:53:09.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Program.cs",
               "RelativeDocumentMoniker": "Tmpp\\Program.cs",
               "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Program.cs",
               "RelativeToolTip": "Tmpp\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T18:50:37.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Member_register.cs",
-              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Member_register.cs",
-              "RelativeDocumentMoniker": "Tmpp\\Member_register.cs",
-              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Member_register.cs",
-              "RelativeToolTip": "Tmpp\\Member_register.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T18:50:13.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
               "RelativeDocumentMoniker": "Tmpp\\Form1.cs",
@@ -83,19 +96,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T14:45:26.776Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
-              "RelativeDocumentMoniker": "Tmpp\\Form1.cs",
-              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
-              "RelativeToolTip": "Tmpp\\Form1.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAcwBsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T22:18:31.829Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tmpp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c68ec1699857125ff05e4f5804602ccd781d16e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tmpp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tmpp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

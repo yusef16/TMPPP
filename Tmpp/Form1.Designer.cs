@@ -30,7 +30,26 @@
         {
             Members_t = new Label();
             Members_p = new Panel();
+            comboBox_genre = new ComboBox();
+            label3 = new Label();
+            Save_btn_members = new Button();
+            textBox_email = new TextBox();
+            Email = new Label();
+            textBox_phonenumber = new TextBox();
+            label_phonenumber = new Label();
+            textBox_name = new TextBox();
+            textBox_Lastname = new TextBox();
+            Name_members = new Label();
+            Lastname_members = new Label();
             Memberships_p = new Panel();
+            label_pret = new Label();
+            label_durata = new Label();
+            button_save_Membership = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox4 = new TextBox();
+            label_numeabonament = new Label();
+            label5 = new Label();
             Inscriere_p = new Panel();
             label1 = new Label();
             label2 = new Label();
@@ -40,27 +59,6 @@
             textBox7 = new TextBox();
             label4 = new Label();
             label6 = new Label();
-            label_pret = new Label();
-            label_durata = new Label();
-            button_save_Membership = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            label_numeabonament = new Label();
-            label5 = new Label();
-            comboBox_genre = new ComboBox();
-            label3 = new Label();
-            Save_btn_members = new Button();
-            label_joiddate = new Label();
-            monthCalendar1 = new MonthCalendar();
-            textBox_email = new TextBox();
-            Email = new Label();
-            textBox_phonenumber = new TextBox();
-            label_phonenumber = new Label();
-            textBox_name = new TextBox();
-            textBox_Lastname = new TextBox();
-            Name_members = new Label();
-            Lastname_members = new Label();
             Coach_p = new Panel();
             Save_btn_coach = new Button();
             textBox_phoneCoach = new TextBox();
@@ -76,6 +74,9 @@
             Coach_main_btn = new Button();
             button_Memberships = new Button();
             button_membership_subscription = new Button();
+            button_search = new Button();
+            comboBox_antrenor_inscriere = new ComboBox();
+            label7 = new Label();
             Members_p.SuspendLayout();
             Memberships_p.SuspendLayout();
             Inscriere_p.SuspendLayout();
@@ -93,12 +94,9 @@
             // 
             // Members_p
             // 
-            Members_p.Controls.Add(Memberships_p);
             Members_p.Controls.Add(comboBox_genre);
             Members_p.Controls.Add(label3);
             Members_p.Controls.Add(Save_btn_members);
-            Members_p.Controls.Add(label_joiddate);
-            Members_p.Controls.Add(monthCalendar1);
             Members_p.Controls.Add(textBox_email);
             Members_p.Controls.Add(Email);
             Members_p.Controls.Add(textBox_phonenumber);
@@ -108,14 +106,104 @@
             Members_p.Controls.Add(Name_members);
             Members_p.Controls.Add(Lastname_members);
             Members_p.Controls.Add(Members_t);
-            Members_p.Location = new Point(12, 81);
+            Members_p.Location = new Point(17, 113);
             Members_p.Name = "Members_p";
-            Members_p.Size = new Size(1254, 651);
+            Members_p.Size = new Size(1346, 709);
             Members_p.TabIndex = 1;
+            // 
+            // comboBox_genre
+            // 
+            comboBox_genre.FormattingEnabled = true;
+            comboBox_genre.Items.AddRange(new object[] { "M", "F" });
+            comboBox_genre.Location = new Point(725, 159);
+            comboBox_genre.Name = "comboBox_genre";
+            comboBox_genre.Size = new Size(309, 33);
+            comboBox_genre.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(722, 108);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 25);
+            label3.TabIndex = 12;
+            label3.Text = "Gen";
+            // 
+            // Save_btn_members
+            // 
+            Save_btn_members.Location = new Point(542, 513);
+            Save_btn_members.Name = "Save_btn_members";
+            Save_btn_members.Size = new Size(181, 73);
+            Save_btn_members.TabIndex = 11;
+            Save_btn_members.Text = "Save";
+            Save_btn_members.UseVisualStyleBackColor = true;
+            // 
+            // textBox_email
+            // 
+            textBox_email.Location = new Point(722, 278);
+            textBox_email.Name = "textBox_email";
+            textBox_email.Size = new Size(312, 31);
+            textBox_email.TabIndex = 8;
+            // 
+            // Email
+            // 
+            Email.AutoSize = true;
+            Email.Location = new Point(722, 226);
+            Email.Name = "Email";
+            Email.Size = new Size(54, 25);
+            Email.TabIndex = 7;
+            Email.Text = "Email";
+            // 
+            // textBox_phonenumber
+            // 
+            textBox_phonenumber.Location = new Point(142, 379);
+            textBox_phonenumber.Name = "textBox_phonenumber";
+            textBox_phonenumber.Size = new Size(338, 31);
+            textBox_phonenumber.TabIndex = 6;
+            // 
+            // label_phonenumber
+            // 
+            label_phonenumber.AutoSize = true;
+            label_phonenumber.Location = new Point(142, 318);
+            label_phonenumber.Name = "label_phonenumber";
+            label_phonenumber.Size = new Size(93, 25);
+            label_phonenumber.TabIndex = 5;
+            label_phonenumber.Text = "Nr_telefon";
+            // 
+            // textBox_name
+            // 
+            textBox_name.Location = new Point(142, 257);
+            textBox_name.Name = "textBox_name";
+            textBox_name.Size = new Size(338, 31);
+            textBox_name.TabIndex = 4;
+            // 
+            // textBox_Lastname
+            // 
+            textBox_Lastname.Location = new Point(142, 153);
+            textBox_Lastname.Name = "textBox_Lastname";
+            textBox_Lastname.Size = new Size(338, 31);
+            textBox_Lastname.TabIndex = 3;
+            // 
+            // Name_members
+            // 
+            Name_members.AutoSize = true;
+            Name_members.Location = new Point(142, 211);
+            Name_members.Name = "Name_members";
+            Name_members.Size = new Size(72, 25);
+            Name_members.TabIndex = 2;
+            Name_members.Text = "Preume";
+            // 
+            // Lastname_members
+            // 
+            Lastname_members.AutoSize = true;
+            Lastname_members.Location = new Point(142, 107);
+            Lastname_members.Name = "Lastname_members";
+            Lastname_members.Size = new Size(60, 25);
+            Lastname_members.TabIndex = 1;
+            Lastname_members.Text = "Nume";
             // 
             // Memberships_p
             // 
-            Memberships_p.Controls.Add(Inscriere_p);
             Memberships_p.Controls.Add(label_pret);
             Memberships_p.Controls.Add(label_durata);
             Memberships_p.Controls.Add(button_save_Membership);
@@ -124,91 +212,10 @@
             Memberships_p.Controls.Add(textBox4);
             Memberships_p.Controls.Add(label_numeabonament);
             Memberships_p.Controls.Add(label5);
-            Memberships_p.Location = new Point(0, 3);
+            Memberships_p.Location = new Point(12, 113);
             Memberships_p.Name = "Memberships_p";
-            Memberships_p.Size = new Size(1254, 651);
+            Memberships_p.Size = new Size(1334, 700);
             Memberships_p.TabIndex = 10;
-            // 
-            // Inscriere_p
-            // 
-            Inscriere_p.Controls.Add(label1);
-            Inscriere_p.Controls.Add(label2);
-            Inscriere_p.Controls.Add(button1);
-            Inscriere_p.Controls.Add(textBox5);
-            Inscriere_p.Controls.Add(textBox6);
-            Inscriere_p.Controls.Add(textBox7);
-            Inscriere_p.Controls.Add(label4);
-            Inscriere_p.Controls.Add(label6);
-            Inscriere_p.Location = new Point(3, 3);
-            Inscriere_p.Name = "Inscriere_p";
-            Inscriere_p.Size = new Size(1254, 651);
-            Inscriere_p.TabIndex = 12;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(212, 348);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 25);
-            label1.TabIndex = 11;
-            label1.Text = "Pret";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(212, 226);
-            label2.Name = "label2";
-            label2.Size = new Size(65, 25);
-            label2.TabIndex = 10;
-            label2.Text = "Durata";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(560, 516);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 9;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(212, 392);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(225, 31);
-            textBox5.TabIndex = 8;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(212, 275);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(225, 31);
-            textBox6.TabIndex = 7;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(212, 153);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(224, 31);
-            textBox7.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(212, 104);
-            label4.Name = "label4";
-            label4.Size = new Size(158, 25);
-            label4.TabIndex = 1;
-            label4.Text = "Nume_abonament";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(577, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(144, 25);
-            label6.TabIndex = 0;
-            label6.Text = "Inscriere membri";
             // 
             // label_pret
             // 
@@ -277,111 +284,88 @@
             label5.TabIndex = 0;
             label5.Text = "Abonamente";
             // 
-            // comboBox_genre
+            // Inscriere_p
             // 
-            comboBox_genre.FormattingEnabled = true;
-            comboBox_genre.Items.AddRange(new object[] { "M", "F" });
-            comboBox_genre.Location = new Point(725, 159);
-            comboBox_genre.Name = "comboBox_genre";
-            comboBox_genre.Size = new Size(309, 33);
-            comboBox_genre.TabIndex = 13;
+            Inscriere_p.Controls.Add(label7);
+            Inscriere_p.Controls.Add(comboBox_antrenor_inscriere);
+            Inscriere_p.Controls.Add(label1);
+            Inscriere_p.Controls.Add(label2);
+            Inscriere_p.Controls.Add(button1);
+            Inscriere_p.Controls.Add(textBox5);
+            Inscriere_p.Controls.Add(textBox6);
+            Inscriere_p.Controls.Add(textBox7);
+            Inscriere_p.Controls.Add(label4);
+            Inscriere_p.Controls.Add(label6);
+            Inscriere_p.Location = new Point(20, 110);
+            Inscriere_p.Name = "Inscriere_p";
+            Inscriere_p.Size = new Size(1337, 706);
+            Inscriere_p.TabIndex = 12;
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(722, 108);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 25);
-            label3.TabIndex = 12;
-            label3.Text = "Gen";
+            label1.AutoSize = true;
+            label1.Location = new Point(212, 348);
+            label1.Name = "label1";
+            label1.Size = new Size(43, 25);
+            label1.TabIndex = 11;
+            label1.Text = "Pret";
             // 
-            // Save_btn_members
+            // label2
             // 
-            Save_btn_members.Location = new Point(505, 551);
-            Save_btn_members.Name = "Save_btn_members";
-            Save_btn_members.Size = new Size(181, 73);
-            Save_btn_members.TabIndex = 11;
-            Save_btn_members.Text = "Save";
-            Save_btn_members.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(212, 226);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 25);
+            label2.TabIndex = 10;
+            label2.Text = "Durata";
             // 
-            // label_joiddate
+            // button1
             // 
-            label_joiddate.AutoSize = true;
-            label_joiddate.Location = new Point(722, 226);
-            label_joiddate.Name = "label_joiddate";
-            label_joiddate.Size = new Size(117, 25);
-            label_joiddate.TabIndex = 10;
-            label_joiddate.Text = "Data inscrierii";
+            button1.Location = new Point(560, 516);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 9;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // monthCalendar1
+            // textBox5
             // 
-            monthCalendar1.Location = new Point(722, 273);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 9;
+            textBox5.Location = new Point(212, 392);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(225, 31);
+            textBox5.TabIndex = 8;
             // 
-            // textBox_email
+            // textBox6
             // 
-            textBox_email.Location = new Point(142, 497);
-            textBox_email.Name = "textBox_email";
-            textBox_email.Size = new Size(338, 31);
-            textBox_email.TabIndex = 8;
+            textBox6.Location = new Point(212, 275);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(225, 31);
+            textBox6.TabIndex = 7;
             // 
-            // Email
+            // textBox7
             // 
-            Email.AutoSize = true;
-            Email.Location = new Point(142, 445);
-            Email.Name = "Email";
-            Email.Size = new Size(54, 25);
-            Email.TabIndex = 7;
-            Email.Text = "Email";
+            textBox7.Location = new Point(212, 153);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(224, 31);
+            textBox7.TabIndex = 5;
             // 
-            // textBox_phonenumber
+            // label4
             // 
-            textBox_phonenumber.Location = new Point(142, 379);
-            textBox_phonenumber.Name = "textBox_phonenumber";
-            textBox_phonenumber.Size = new Size(338, 31);
-            textBox_phonenumber.TabIndex = 6;
+            label4.AutoSize = true;
+            label4.Location = new Point(212, 104);
+            label4.Name = "label4";
+            label4.Size = new Size(158, 25);
+            label4.TabIndex = 1;
+            label4.Text = "Nume_abonament";
             // 
-            // label_phonenumber
+            // label6
             // 
-            label_phonenumber.AutoSize = true;
-            label_phonenumber.Location = new Point(142, 318);
-            label_phonenumber.Name = "label_phonenumber";
-            label_phonenumber.Size = new Size(93, 25);
-            label_phonenumber.TabIndex = 5;
-            label_phonenumber.Text = "Nr_telefon";
-            // 
-            // textBox_name
-            // 
-            textBox_name.Location = new Point(142, 257);
-            textBox_name.Name = "textBox_name";
-            textBox_name.Size = new Size(338, 31);
-            textBox_name.TabIndex = 4;
-            // 
-            // textBox_Lastname
-            // 
-            textBox_Lastname.Location = new Point(142, 153);
-            textBox_Lastname.Name = "textBox_Lastname";
-            textBox_Lastname.Size = new Size(338, 31);
-            textBox_Lastname.TabIndex = 3;
-            // 
-            // Name_members
-            // 
-            Name_members.AutoSize = true;
-            Name_members.Location = new Point(142, 211);
-            Name_members.Name = "Name_members";
-            Name_members.Size = new Size(72, 25);
-            Name_members.TabIndex = 2;
-            Name_members.Text = "Preume";
-            // 
-            // Lastname_members
-            // 
-            Lastname_members.AutoSize = true;
-            Lastname_members.Location = new Point(142, 107);
-            Lastname_members.Name = "Lastname_members";
-            Lastname_members.Size = new Size(60, 25);
-            Lastname_members.TabIndex = 1;
-            Lastname_members.Text = "Nume";
+            label6.AutoSize = true;
+            label6.Location = new Point(577, 31);
+            label6.Name = "label6";
+            label6.Size = new Size(144, 25);
+            label6.TabIndex = 0;
+            label6.Text = "Inscriere membri";
             // 
             // Coach_p
             // 
@@ -395,9 +379,9 @@
             Coach_p.Controls.Add(label_namecoach);
             Coach_p.Controls.Add(Lastname_Coach);
             Coach_p.Controls.Add(Coach_t);
-            Coach_p.Location = new Point(9, 84);
+            Coach_p.Location = new Point(20, 104);
             Coach_p.Name = "Coach_p";
-            Coach_p.Size = new Size(1254, 651);
+            Coach_p.Size = new Size(1346, 712);
             Coach_p.TabIndex = 2;
             // 
             // Save_btn_coach
@@ -484,7 +468,7 @@
             // 
             // Members_main_btn
             // 
-            Members_main_btn.Location = new Point(24, 23);
+            Members_main_btn.Location = new Point(67, 43);
             Members_main_btn.Name = "Members_main_btn";
             Members_main_btn.Size = new Size(112, 34);
             Members_main_btn.TabIndex = 2;
@@ -494,7 +478,7 @@
             // 
             // Coach_main_btn
             // 
-            Coach_main_btn.Location = new Point(233, 23);
+            Coach_main_btn.Location = new Point(242, 43);
             Coach_main_btn.Name = "Coach_main_btn";
             Coach_main_btn.Size = new Size(112, 34);
             Coach_main_btn.TabIndex = 3;
@@ -504,7 +488,7 @@
             // 
             // button_Memberships
             // 
-            button_Memberships.Location = new Point(422, 23);
+            button_Memberships.Location = new Point(416, 43);
             button_Memberships.Name = "button_Memberships";
             button_Memberships.Size = new Size(149, 34);
             button_Memberships.TabIndex = 4;
@@ -514,24 +498,55 @@
             // 
             // button_membership_subscription
             // 
-            button_membership_subscription.Location = new Point(650, 23);
+            button_membership_subscription.Location = new Point(644, 43);
             button_membership_subscription.Name = "button_membership_subscription";
             button_membership_subscription.Size = new Size(112, 34);
             button_membership_subscription.TabIndex = 11;
             button_membership_subscription.Text = "Inscriere";
             button_membership_subscription.UseVisualStyleBackColor = true;
+            button_membership_subscription.Click += button_membership_subscription_Click;
+            // 
+            // button_search
+            // 
+            button_search.Location = new Point(863, 43);
+            button_search.Name = "button_search";
+            button_search.Size = new Size(112, 34);
+            button_search.TabIndex = 12;
+            button_search.Text = "Cautare";
+            button_search.UseVisualStyleBackColor = true;
+            button_search.Click += button_search_Click;
+            // 
+            // comboBox_antrenor_inscriere
+            // 
+            comboBox_antrenor_inscriere.FormattingEnabled = true;
+            comboBox_antrenor_inscriere.Location = new Point(741, 147);
+            comboBox_antrenor_inscriere.Name = "comboBox_antrenor_inscriere";
+            comboBox_antrenor_inscriere.Size = new Size(182, 33);
+            comboBox_antrenor_inscriere.TabIndex = 12;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(745, 102);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 25);
+            label7.TabIndex = 13;
+            label7.Text = "Antrenor";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1278, 744);
+            ClientSize = new Size(1378, 844);
+            Controls.Add(button_search);
             Controls.Add(button_membership_subscription);
             Controls.Add(button_Memberships);
             Controls.Add(Coach_main_btn);
             Controls.Add(Members_main_btn);
-            Controls.Add(Members_p);
             Controls.Add(Coach_p);
+            Controls.Add(Memberships_p);
+            Controls.Add(Members_p);
+            Controls.Add(Inscriere_p);
             Name = "Form1";
             Text = "Gym";
             Members_p.ResumeLayout(false);
@@ -562,8 +577,6 @@
         private TextBox textBox_email;
         private Label Email;
         private Button Save_btn_members;
-        private Label label_joiddate;
-        private MonthCalendar monthCalendar1;
         private TextBox textBox_nameCoach;
         private TextBox textBox_lastnameCoach;
         private Label label_phonenumbercoach;
@@ -595,5 +608,8 @@
         private Label label6;
         private Button button_membership_subscription;
         private ComboBox comboBox_genre;
+        private Button button_search;
+        private Label label7;
+        private ComboBox comboBox_antrenor_inscriere;
     }
 }

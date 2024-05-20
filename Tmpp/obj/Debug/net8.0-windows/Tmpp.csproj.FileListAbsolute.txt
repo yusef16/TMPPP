@@ -14,3 +14,4 @@ C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\refint\Tmp
 C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.pdb
 C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.genruntimeconfig.cache
 C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\ref\Tmpp.dll
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.sourcelink.json
