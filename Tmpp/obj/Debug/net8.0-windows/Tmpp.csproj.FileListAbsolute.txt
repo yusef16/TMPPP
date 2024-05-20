@@ -1,0 +1,16 @@
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\Tmpp.exe
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\Tmpp.deps.json
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\Tmpp.runtimeconfig.json
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\Tmpp.dll
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\Tmpp.pdb
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.Form1.resources
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.csproj.GenerateResource.cache
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.AssemblyInfoInputs.cache
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.AssemblyInfo.cs
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.csproj.CoreCompileInputs.cache
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.dll
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\refint\Tmpp.dll
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.pdb
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.genruntimeconfig.cache
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\ref\Tmpp.dll
