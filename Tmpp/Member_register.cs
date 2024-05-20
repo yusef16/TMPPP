@@ -12,7 +12,7 @@ namespace Tmpp
         public string Nrtelefon { get; set; }
         public string Email { get; set; }
         public string Gen { get; set; }
-        public string Data { get; set; }
+        
 
 
     }
@@ -61,14 +61,10 @@ namespace Tmpp
         }
 
 
-        public Members_builder Data(string data)
-        {
-            _members.Data = data;
-            return this;
-        }
+   
 
 
-        Members Build()
+        public Members Build()
         { 
             return _members;
         }

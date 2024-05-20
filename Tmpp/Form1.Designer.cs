@@ -45,12 +45,12 @@
             label_pret = new Label();
             label_durata = new Label();
             button_save_Membership = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
+            textBox_pretAbonamente = new TextBox();
             label_numeabonament = new Label();
             label5 = new Label();
             Inscriere_p = new Panel();
+            label7 = new Label();
+            comboBox_antrenor_inscriere = new ComboBox();
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
@@ -75,12 +75,15 @@
             button_Memberships = new Button();
             button_membership_subscription = new Button();
             button_search = new Button();
-            comboBox_antrenor_inscriere = new ComboBox();
-            label7 = new Label();
+            panel1 = new Panel();
+            comboBox_tip = new ComboBox();
+            Durata_combo = new ComboBox();
+            dataGridView1 = new DataGridView();
             Members_p.SuspendLayout();
             Memberships_p.SuspendLayout();
             Inscriere_p.SuspendLayout();
             Coach_p.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // Members_t
@@ -137,6 +140,7 @@
             Save_btn_members.TabIndex = 11;
             Save_btn_members.Text = "Save";
             Save_btn_members.UseVisualStyleBackColor = true;
+            Save_btn_members.Click += Save_btn_members_Click;
             // 
             // textBox_email
             // 
@@ -204,12 +208,13 @@
             // 
             // Memberships_p
             // 
+            Memberships_p.Controls.Add(dataGridView1);
+            Memberships_p.Controls.Add(Durata_combo);
+            Memberships_p.Controls.Add(comboBox_tip);
             Memberships_p.Controls.Add(label_pret);
             Memberships_p.Controls.Add(label_durata);
             Memberships_p.Controls.Add(button_save_Membership);
-            Memberships_p.Controls.Add(textBox1);
-            Memberships_p.Controls.Add(textBox2);
-            Memberships_p.Controls.Add(textBox4);
+            Memberships_p.Controls.Add(textBox_pretAbonamente);
             Memberships_p.Controls.Add(label_numeabonament);
             Memberships_p.Controls.Add(label5);
             Memberships_p.Location = new Point(12, 113);
@@ -245,26 +250,12 @@
             button_save_Membership.UseVisualStyleBackColor = true;
             button_save_Membership.Click += button_save_Membership_Click;
             // 
-            // textBox1
+            // textBox_pretAbonamente
             // 
-            textBox1.Location = new Point(212, 392);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(225, 31);
-            textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(212, 275);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(225, 31);
-            textBox2.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(212, 153);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(224, 31);
-            textBox4.TabIndex = 5;
+            textBox_pretAbonamente.Location = new Point(212, 392);
+            textBox_pretAbonamente.Name = "textBox_pretAbonamente";
+            textBox_pretAbonamente.Size = new Size(225, 31);
+            textBox_pretAbonamente.TabIndex = 8;
             // 
             // label_numeabonament
             // 
@@ -300,6 +291,23 @@
             Inscriere_p.Name = "Inscriere_p";
             Inscriere_p.Size = new Size(1337, 706);
             Inscriere_p.TabIndex = 12;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(745, 102);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 25);
+            label7.TabIndex = 13;
+            label7.Text = "Antrenor";
+            // 
+            // comboBox_antrenor_inscriere
+            // 
+            comboBox_antrenor_inscriere.FormattingEnabled = true;
+            comboBox_antrenor_inscriere.Location = new Point(741, 147);
+            comboBox_antrenor_inscriere.Name = "comboBox_antrenor_inscriere";
+            comboBox_antrenor_inscriere.Size = new Size(182, 33);
+            comboBox_antrenor_inscriere.TabIndex = 12;
             // 
             // label1
             // 
@@ -392,6 +400,7 @@
             Save_btn_coach.TabIndex = 9;
             Save_btn_coach.Text = "Save";
             Save_btn_coach.UseVisualStyleBackColor = true;
+            Save_btn_coach.Click += Save_btn_coach_Click;
             // 
             // textBox_phoneCoach
             // 
@@ -516,22 +525,39 @@
             button_search.UseVisualStyleBackColor = true;
             button_search.Click += button_search_Click;
             // 
-            // comboBox_antrenor_inscriere
+            // panel1
             // 
-            comboBox_antrenor_inscriere.FormattingEnabled = true;
-            comboBox_antrenor_inscriere.Location = new Point(741, 147);
-            comboBox_antrenor_inscriere.Name = "comboBox_antrenor_inscriere";
-            comboBox_antrenor_inscriere.Size = new Size(182, 33);
-            comboBox_antrenor_inscriere.TabIndex = 12;
+            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.Location = new Point(17, 11);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1349, 87);
+            panel1.TabIndex = 13;
             // 
-            // label7
+            // comboBox_tip
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(745, 102);
-            label7.Name = "label7";
-            label7.Size = new Size(82, 25);
-            label7.TabIndex = 13;
-            label7.Text = "Antrenor";
+            comboBox_tip.FormattingEnabled = true;
+            comboBox_tip.Items.AddRange(new object[] { "Part-time", "Full-time" });
+            comboBox_tip.Location = new Point(212, 164);
+            comboBox_tip.Name = "comboBox_tip";
+            comboBox_tip.Size = new Size(225, 33);
+            comboBox_tip.TabIndex = 12;
+            // 
+            // Durata_combo
+            // 
+            Durata_combo.FormattingEnabled = true;
+            Durata_combo.Location = new Point(209, 282);
+            Durata_combo.Name = "Durata_combo";
+            Durata_combo.Size = new Size(228, 33);
+            Durata_combo.TabIndex = 13;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(749, 159);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(360, 289);
+            dataGridView1.TabIndex = 14;
             // 
             // Form1
             // 
@@ -543,10 +569,11 @@
             Controls.Add(button_Memberships);
             Controls.Add(Coach_main_btn);
             Controls.Add(Members_main_btn);
-            Controls.Add(Coach_p);
+            Controls.Add(panel1);
             Controls.Add(Memberships_p);
             Controls.Add(Members_p);
             Controls.Add(Inscriere_p);
+            Controls.Add(Coach_p);
             Name = "Form1";
             Text = "Gym";
             Members_p.ResumeLayout(false);
@@ -557,6 +584,7 @@
             Inscriere_p.PerformLayout();
             Coach_p.ResumeLayout(false);
             Coach_p.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -588,9 +616,7 @@
         private TextBox textBox_emailCoach;
         private Panel Memberships_p;
         private Button button_save_Membership;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox4;
+        private TextBox textBox_pretAbonamente;
         private Label label_durata;
         private Label label_pret;
         private Label label3;
@@ -611,5 +637,9 @@
         private Button button_search;
         private Label label7;
         private ComboBox comboBox_antrenor_inscriere;
+        private Panel panel1;
+        private ComboBox Durata_combo;
+        private ComboBox comboBox_tip;
+        private DataGridView dataGridView1;
     }
 }
