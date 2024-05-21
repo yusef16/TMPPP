@@ -2,19 +2,25 @@
 using System.Net;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Collections.Generic;
 
 namespace Tmpp
 {
     public partial class Form1 : Form
     {
         string connectionString = "Data Source=YUSEF;Initial Catalog=tmpp;Integrated Security=True;Encrypt=False";
+        List<string> concat = new List<string>();
 
         public Form1()
         {
             InitializeComponent();
-            CurrentUser currentUser = CurrentUser.Instance;
+            Get_coach_list();
+            load_data_abonamente();
+
+            /*CurrentUser currentUser = CurrentUser.Instance;
             string user = currentUser.GetCurrentUser();
             MessageBox.Show(user);
+            load_data();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -37,9 +43,9 @@ namespace Tmpp
                         {
                             button_receptionist.Visible = true;
                         }
-                        else 
+                        else
                         {
-                            button_receptionist.Visible=false;
+                            button_receptionist.Visible = false;
                         }
 
                     }
@@ -47,13 +53,111 @@ namespace Tmpp
 
 
 
-            }
+            }*/
 
 
 
         }
 
-        
+
+
+        public void load_data()
+        {
+            string query = "SELECT * FROM Receptionist";
+
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dataTable);
+            }
+
+            dataGridView_receptionist.DataSource = dataTable;
+
+        }
+
+        public void load_data_abonamente()
+        {
+            string query = "SELECT * FROM Abonamente";
+
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dataTable);
+            }
+
+            dataGridView_abonamente.DataSource = dataTable;
+
+        }
+
+
+        public void Get_coach_list()
+        {
+
+
+
+
+            string query = "SELECT Nume FROM Antrenori";
+            string query1 = "SELECT Prenume From Antrenori";
+
+            List<string> dataListNume = new List<string>();
+            List<string> dataListPrenume = new List<string>();
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string data = reader["Nume"].ToString();
+                        dataListNume.Add(data);
+                    }
+                }
+
+
+                SqlCommand command1 = new SqlCommand(query1, connection);
+
+                using (SqlDataReader reader = command1.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string data = reader["Prenume"].ToString();
+                        dataListPrenume.Add(data);
+                    }
+                }
+            }
+
+            int c = dataListNume.Count;
+
+
+
+            for (int i = 0; i < c; i++)
+            {
+                string concatenated = dataListNume[i] + ' ' + dataListPrenume[i];
+                concat.Add(concatenated);
+            }
+
+            //for (int i = 0; i < c; i++)
+            //{
+            //  MessageBox.Show(concat[i]);
+            //}
+
+
+
+        }
+
+
+
+
+
 
 
         private void Members_main_btn_Click(object sender, EventArgs e)
@@ -61,27 +165,29 @@ namespace Tmpp
 
 
             Memberships_p.Visible = false;
-
             Coach_p.Visible = false;
-
             Inscriere_p.Visible = false;
+            panel_search.Visible = false;
+            panel_r.Visible = false;
 
-
-            //Memberships_p.Hide();
-            //Coach_p.Hide();
-            Members_p.BringToFront();
+            //Members_p.BringToFront();
             Members_p.Visible = true;
-            
+
         }
 
         private void Coach_main_btn_Click(object sender, EventArgs e)
         {
 
 
+
+
             Memberships_p.Visible = false;
             Members_p.Visible = false;
             Inscriere_p.Visible = false;
             panel_r.Visible = false;
+            panel_search.Visible = false;
+
+            //Members_p.BringToFront();
             Coach_p.Visible = true;
         }
 
@@ -92,22 +198,31 @@ namespace Tmpp
             Members_p.Visible = false;
             Coach_p.Visible = false;
             Inscriere_p.Visible = false;
+            panel_search.Visible = false;
             panel_r.Visible = false;
+
+            Memberships_p.BringToFront();
+
             Memberships_p.Visible = true;
+
 
         }
 
 
         private void button_membership_subscription_Click(object sender, EventArgs e)
         {
-
+            foreach (string item in concat)
+            {
+                comboBox_antrenor_inscriere.Items.Add(item);
+            }
 
             Members_p.Visible = false;
             Coach_p.Visible = false;
             Memberships_p.Visible = false;
             panel_r.Visible = false;
+            panel_search.Visible = false;
 
-            Inscriere_p.BringToFront();
+            //Inscriere_p.BringToFront();
             Inscriere_p.Visible = true;
 
 
@@ -115,7 +230,14 @@ namespace Tmpp
 
         private void button_search_Click(object sender, EventArgs e)
         {
+            Members_p.Visible = false;
+            Coach_p.Visible = false;
+            Memberships_p.Visible = false;
+            Inscriere_p.Visible = false;
+            panel_r.Visible = false;
 
+            //panel_search.BringToFront();
+            panel_search.Visible = true;
         }
 
 
@@ -125,7 +247,9 @@ namespace Tmpp
             Coach_p.Visible = false;
             Memberships_p.Visible = false;
             Inscriere_p.Visible = false;
-            panel_r.BringToFront();
+            panel_search.Visible = false;
+
+            //panel_r.BringToFront();
             panel_r.Visible = true;
         }
 
@@ -209,12 +333,12 @@ namespace Tmpp
                 {
 
                     connection.Open();
-                    string query = "INSERT INTO Antrenori (Tipabonamet, Durata, Pret) VALUES (@Tip,@Durata,@Pret)";
+                    string query = "INSERT INTO Abonamente (Tipabonament, Durata, Pret) VALUES (@Tip,@Durata,@Pret)";
                     SqlCommand command = new SqlCommand(query, connection);
 
-                    command.Parameters.AddWithValue("@Tip", textBox_lastnameCoach.Text);
-                    command.Parameters.AddWithValue("@Durata", textBox_nameCoach.Text);
-                    command.Parameters.AddWithValue("@Pret", textBox_phoneCoach.Text);
+                    command.Parameters.AddWithValue("@Tip", comboBox_tip.Text);
+                    command.Parameters.AddWithValue("@Durata", Durata_combo.Text);
+                    command.Parameters.AddWithValue("@Pret", textBox_pretAbonamente.Text);
 
 
 
@@ -224,6 +348,7 @@ namespace Tmpp
                         SqlDataReader reader = command.ExecuteReader();
                         MessageBox.Show("Datele s-au inregistrat");
                         connection.Close();
+                        load_data_abonamente();
 
                     }
                     catch (SqlException ex)
@@ -258,8 +383,19 @@ namespace Tmpp
             }
             else
             {
+
+
+
+
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+
+
+
+
+
+
 
                     connection.Open();
                     string query = "INSERT INTO Antrenori (Nume, Prenume, Email,Telefon) VALUES (@Nume,@Prenume,@Email,@Nrtelefon)";
@@ -302,7 +438,7 @@ namespace Tmpp
 
         private void button_save_receptionist_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -357,9 +493,110 @@ namespace Tmpp
 
                         MessageBox.Show($"Error: {ex.Message}");
                     }
-
                 }
             }
+        }
+
+
+        List<int> abonamente = new List<int>();
+        public void getMembershipsList()
+        {
+            string query = "SELECT COUNT(*) FROM Abonamente";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                int rowCount = (int)command.ExecuteScalar();
+
+                for (int i = 0; i < rowCount; i++)
+                {
+                    abonamente.Add(i);
+                }
+
+                Console.WriteLine($"Total rows in the table: {rowCount}");
+            }
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) // inscriere membri
+        {
+
+            if (comboBox_nume_prenume_membri.Text == "" || comboBox1_abonamente.Text == "" || textBox_pret_inscriere.Text == "" || comboBox1_gen_inscriere.Text == "")
+            {
+                MessageBox.Show("Completeaza toate campurile");
+            }
+            else
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                    connection.Open();
+                    string query = "INSERT INTO Inscriei (MembruID, AbonamentID,AntrenorID,Pret) VALUES (@MembruId,@Ab,@Antr,@Pret)";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    int pret = int.Parse(textBox_pret_inscriere.Text);
+                    string gen = comboBox1_gen_inscriere.Text;
+                    int pret_redus;
+
+                    if (comboBox1_gen_inscriere.Text == "F")
+                    {
+                        WomenDiscountStrategy discount = new WomenDiscountStrategy();
+                        pret_redus = discount.ApplyDiscount(pret);
+                        MessageBox.Show(pret_redus.ToString());
+                    }
+                    else
+                    {
+                        NoDiscountStrategy noDiscount = new NoDiscountStrategy();
+                        pret_redus = noDiscount.ApplyDiscount(pret);
+                        MessageBox.Show(pret_redus.ToString());
+                    }
+
+
+
+
+                    command.Parameters.AddWithValue("@MembruId", comboBox_nume_prenume_membri.Text);
+                    command.Parameters.AddWithValue("@Ab", comboBox1_abonamente.Text);
+                    command.Parameters.AddWithValue("@Antr", textBox_username_receptionist.Text);
+                    command.Parameters.AddWithValue("@Pret", pret_redus);
+
+
+                    try
+                    {
+
+                        SqlDataReader reader = command.ExecuteReader();
+                        MessageBox.Show("Datele s-au inregistrat");
+                        connection.Close();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"SQL Error: {ex.Message}, Number: {ex.Number}");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+                }
+            }
+
+
+
+        }
+
+        private void button1_save_date_excel_Click(object sender, EventArgs e)
+        {
+            
+            string tableName = "Membri";
+            string excelFilePath = "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\1.xlsx";
+
+            ITableAdapter tableAdapter = new SqlTableAdapter(connectionString);
+            tableAdapter.ConvertTableToExcel(tableName, excelFilePath);
+
+            MessageBox.Show("Fisierul s-a creat");
         }
     }
 }

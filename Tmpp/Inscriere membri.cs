@@ -3,24 +3,24 @@ using System.Net;
 
 namespace Tmpp
 {
-
+    //Strategy
     public interface IDiscountStrategy
     {
-        double ApplyDiscount(double price);
+        public int ApplyDiscount(int price);
     }
 
     public class WomenDiscountStrategy : IDiscountStrategy
     {
-        public double ApplyDiscount(double price)
+        public int ApplyDiscount(int price)
         {
-            return price * 0.85; // Aplică o reducere de 15%
+            return (int)Math.Round(price * 0.85); // Aplică o reducere de 15%
         }
     }
 
 
     public class NoDiscountStrategy : IDiscountStrategy
     {
-        public double ApplyDiscount(double price)
+        public int ApplyDiscount(int price)
         {
             return price; // Nicio reducere
         }
