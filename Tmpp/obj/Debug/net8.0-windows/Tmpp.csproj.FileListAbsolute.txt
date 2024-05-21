@@ -24,3 +24,4 @@ C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\runtimes\u
 C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.csproj.AssemblyReference.cache
 C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.csproj.Up2Date
+C:\Users\yusef16\Desktop\sem 6\TMPP\Gym\Tmpp\obj\Debug\net8.0-windows\Tmpp.Logare.resources

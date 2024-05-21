@@ -1,20 +1,59 @@
-using System.Data;
+﻿using System.Data;
 using System.Net;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Tmpp
 {
     public partial class Form1 : Form
     {
-
+        string connectionString = "Data Source=YUSEF;Initial Catalog=tmpp;Integrated Security=True;Encrypt=False";
 
         public Form1()
         {
             InitializeComponent();
+            CurrentUser currentUser = CurrentUser.Instance;
+            string user = currentUser.GetCurrentUser();
+            MessageBox.Show(user);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Receptionist WHERE Username = @User";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@User", user);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read(); // Citește primul rând 
+                        bool isAdmin = Convert.ToBoolean(reader["IsAdmin"]);
+
+
+                        if (isAdmin == true)
+                        {
+                            button_receptionist.Visible = true;
+                        }
+                        else 
+                        {
+                            button_receptionist.Visible=false;
+                        }
+
+                    }
+                }
+
+
+
+            }
+
+
+
         }
 
-
-        string connectionString = "Data Source=YUSEF;Initial Catalog=tmpp;Integrated Security=True;Encrypt=False";
+        
 
 
         private void Members_main_btn_Click(object sender, EventArgs e)
@@ -32,7 +71,7 @@ namespace Tmpp
             //Coach_p.Hide();
             Members_p.BringToFront();
             Members_p.Visible = true;
-
+            
         }
 
         private void Coach_main_btn_Click(object sender, EventArgs e)
@@ -42,10 +81,7 @@ namespace Tmpp
             Memberships_p.Visible = false;
             Members_p.Visible = false;
             Inscriere_p.Visible = false;
-
-
-            //Memberships_p.Hide();
-            //Members_p.Hide();
+            panel_r.Visible = false;
             Coach_p.Visible = true;
         }
 
@@ -56,10 +92,7 @@ namespace Tmpp
             Members_p.Visible = false;
             Coach_p.Visible = false;
             Inscriere_p.Visible = false;
-
-
-            //Members_p.Hide();
-            //Coach_p.Hide();
+            panel_r.Visible = false;
             Memberships_p.Visible = true;
 
         }
@@ -72,6 +105,7 @@ namespace Tmpp
             Members_p.Visible = false;
             Coach_p.Visible = false;
             Memberships_p.Visible = false;
+            panel_r.Visible = false;
 
             Inscriere_p.BringToFront();
             Inscriere_p.Visible = true;
@@ -85,7 +119,15 @@ namespace Tmpp
         }
 
 
-
+        private void button_receptionist_Click(object sender, EventArgs e)
+        {
+            Members_p.Visible = false;
+            Coach_p.Visible = false;
+            Memberships_p.Visible = false;
+            Inscriere_p.Visible = false;
+            panel_r.BringToFront();
+            panel_r.Visible = true;
+        }
 
 
 
@@ -173,7 +215,7 @@ namespace Tmpp
                     command.Parameters.AddWithValue("@Tip", textBox_lastnameCoach.Text);
                     command.Parameters.AddWithValue("@Durata", textBox_nameCoach.Text);
                     command.Parameters.AddWithValue("@Pret", textBox_phoneCoach.Text);
-                    
+
 
 
                     try
@@ -210,7 +252,7 @@ namespace Tmpp
         private void Save_btn_coach_Click(object sender, EventArgs e)
         {
 
-            if(textBox_lastnameCoach.Text == "" || textBox_nameCoach.Text == "" || textBox_phoneCoach.Text == "" || textBox_emailCoach.Text == "")
+            if (textBox_lastnameCoach.Text == "" || textBox_nameCoach.Text == "" || textBox_phoneCoach.Text == "" || textBox_emailCoach.Text == "")
             {
                 MessageBox.Show("Completeaza toate campurile");
             }
@@ -253,7 +295,71 @@ namespace Tmpp
 
         }
 
+        private void panel_r_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button_save_receptionist_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_save_receptionist_Click_1(object sender, EventArgs e)
+        {
+            if (textBox_nume_receptionist.Text == "" || textBox_prenume_receptionist.Text == "" || textBox_username_receptionist.Text == "" || textBox_parola_receptionist.Text == "" || textBox_nrtelefon_receptionist.Text == "" || textBox1_email_receptionist.Text == "")
+            {
+                MessageBox.Show("Completeaza toate campurile");
+            }
+            else
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                    connection.Open();
+                    string query = "INSERT INTO Receptionist (Nume, Prenume, Username,Parola,Telefon,Email,IsAdmin) VALUES (@Nume,@Prenume,@Username,@Parola,@Telefon,@Email,@IsAdmin)";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    int admin = 0;
+
+                    if (checkBox_isadmin.Checked)
+                    { admin = 1; }
 
 
+                    command.Parameters.AddWithValue("@Nume", textBox_nume_receptionist.Text);
+                    command.Parameters.AddWithValue("@Prenume", textBox_prenume_receptionist.Text);
+                    command.Parameters.AddWithValue("@Username", textBox_username_receptionist.Text);
+                    command.Parameters.AddWithValue("@Parola", textBox_parola_receptionist.Text);
+                    command.Parameters.AddWithValue("@Telefon", textBox_nrtelefon_receptionist.Text);
+                    command.Parameters.AddWithValue("@Email", textBox1_email_receptionist.Text);
+                    command.Parameters.AddWithValue("@IsAdmin", admin);
+
+
+                    try
+                    {
+
+                        SqlDataReader reader = command.ExecuteReader();
+                        MessageBox.Show("Datele s-au inregistrat");
+                        connection.Close();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"SQL Error: {ex.Message}, Number: {ex.Number}");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+
+                }
+            }
+        }
     }
 }
