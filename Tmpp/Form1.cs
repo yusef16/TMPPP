@@ -587,9 +587,10 @@ namespace Tmpp
 
         }
 
+        //Save to excell
         private void button1_save_date_excel_Click(object sender, EventArgs e)
         {
-            
+
             string tableName = "Membri";
             string excelFilePath = "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\1.xlsx";
 
@@ -597,6 +598,97 @@ namespace Tmpp
             tableAdapter.ConvertTableToExcel(tableName, excelFilePath);
 
             MessageBox.Show("Fisierul s-a creat");
+        }
+
+        // Search button cautare membru
+        private void button_cautare_Click(object sender, EventArgs e)
+        {
+            if (textBox_cautare_nume.Text == "" || textBox_cautare_prenume.Text == "")
+            {
+                MessageBox.Show("Completeaza toate campurile");
+            }
+            else
+            {
+                string query = "Select * From Membri Where Nume = @Nume AND Prenume = @Prenume";
+
+                string nume = textBox_cautare_nume.Text;
+                string prenume = textBox_cautare_prenume.Text;
+
+                List<string> date = new List<string>();
+
+                date.Add(nume);
+                date.Add(prenume);
+
+                SearchTemplate search = new NameSearch();
+                DataTable dt = search.Search(query, connectionString, date);
+
+                dataGridView_cautare_rezultat.DataSource = dt;
+                date.Clear();
+
+            }
+
+        }
+
+        // cautare antrenor
+        private void button_cautare_antrenor_Click(object sender, EventArgs e)
+        {
+            if (textBox_cautare_nume.Text == "" || textBox_cautare_prenume.Text == "")
+            {
+                MessageBox.Show("Completeaza toate campurile");
+            }
+            else
+            {
+                string query = "Select * From Antrenori Where Nume = @Nume AND Prenume = @Prenume";
+
+                string nume = textBox_cautare_nume.Text;
+                string prenume = textBox_cautare_prenume.Text;
+
+                List<string> date = new List<string>();
+
+                date.Add(nume);
+                date.Add(prenume);
+
+                SearchTemplate search = new CoachSearch();
+                DataTable dt = search.Search(query, connectionString, date);
+
+                dataGridView_cautare_rezultat.DataSource = dt;
+                date.Clear();
+
+            }
+        }
+
+        // cautare abonamente
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        // cautare abonamente
+        private void button_cautare_abonamente_Click(object sender, EventArgs e)
+        {
+            if (textBox_tip_abonament.Text == "" )
+            {
+                MessageBox.Show("Completeaza campul cu tipul de abonamente");
+            }
+            else
+            {
+                string query = "Select * From Abonamente Where Tipabonament = @tip";
+
+                string tip = textBox_tip_abonament.Text;
+                
+
+                List<string> date = new List<string>();
+
+                date.Add(tip);
+                
+
+                SearchTemplate search = new MembershipSearch();
+                DataTable dt = search.Search(query, connectionString, date);
+
+                dataGridView_cautare_rezultat.DataSource = dt;
+                date.Clear();
+
+            }
         }
     }
 }

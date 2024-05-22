@@ -69,13 +69,22 @@
             label1 = new Label();
             comboBox1_abonamente = new ComboBox();
             comboBox_nume_prenume_membri = new ComboBox();
-            panel_search = new Panel();
-            label_search = new Label();
             label7 = new Label();
             comboBox_antrenor_inscriere = new ComboBox();
             button_inscriere = new Button();
             label4 = new Label();
             label6 = new Label();
+            panel_search = new Panel();
+            textBox_tip_abonament = new TextBox();
+            label1_tip_abonament = new Label();
+            button_cautare_antrenor = new Button();
+            button_cautare = new Button();
+            textBox_cautare_prenume = new TextBox();
+            textBox_cautare_nume = new TextBox();
+            label_prenume_cautare = new Label();
+            label_nume_cautare = new Label();
+            dataGridView_cautare_rezultat = new DataGridView();
+            label_search = new Label();
             Coach_p = new Panel();
             Save_btn_coach = new Button();
             textBox_phoneCoach = new TextBox();
@@ -104,11 +113,13 @@
             button_search = new Button();
             panel1 = new Panel();
             button_receptionist = new Button();
+            button_cautare_abonamente = new Button();
             Members_p.SuspendLayout();
             panel_r.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_receptionist).BeginInit();
             Inscriere_p.SuspendLayout();
             panel_search.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_cautare_rezultat).BeginInit();
             Coach_p.SuspendLayout();
             Memberships_p.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_abonamente).BeginInit();
@@ -138,7 +149,7 @@
             Members_p.Controls.Add(Name_members);
             Members_p.Controls.Add(Lastname_members);
             Members_p.Controls.Add(Members_t);
-            Members_p.Location = new Point(41, 131);
+            Members_p.Location = new Point(1568, 60);
             Members_p.Name = "Members_p";
             Members_p.Size = new Size(1340, 700);
             Members_p.TabIndex = 1;
@@ -255,7 +266,7 @@
             panel_r.Controls.Add(textBox_nume_receptionist);
             panel_r.Controls.Add(label_nume_receptionist);
             panel_r.Controls.Add(label_receptionist);
-            panel_r.Location = new Point(41, 131);
+            panel_r.Location = new Point(1736, 92);
             panel_r.Name = "panel_r";
             panel_r.Size = new Size(1340, 700);
             panel_r.TabIndex = 15;
@@ -429,7 +440,7 @@
             Inscriere_p.Controls.Add(button_inscriere);
             Inscriere_p.Controls.Add(label4);
             Inscriere_p.Controls.Add(label6);
-            Inscriere_p.Location = new Point(41, 131);
+            Inscriere_p.Location = new Point(1626, 365);
             Inscriere_p.Name = "Inscriere_p";
             Inscriere_p.Size = new Size(1340, 700);
             Inscriere_p.TabIndex = 12;
@@ -503,23 +514,6 @@
             comboBox_nume_prenume_membri.Size = new Size(226, 33);
             comboBox_nume_prenume_membri.TabIndex = 14;
             // 
-            // panel_search
-            // 
-            panel_search.Controls.Add(label_search);
-            panel_search.Location = new Point(41, 131);
-            panel_search.Name = "panel_search";
-            panel_search.Size = new Size(1340, 700);
-            panel_search.TabIndex = 18;
-            // 
-            // label_search
-            // 
-            label_search.AutoSize = true;
-            label_search.Location = new Point(571, 43);
-            label_search.Name = "label_search";
-            label_search.Size = new Size(72, 25);
-            label_search.TabIndex = 0;
-            label_search.Text = "Cautare";
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -565,6 +559,110 @@
             label6.TabIndex = 0;
             label6.Text = "Inscriere membri";
             // 
+            // panel_search
+            // 
+            panel_search.Controls.Add(button_cautare_abonamente);
+            panel_search.Controls.Add(textBox_tip_abonament);
+            panel_search.Controls.Add(label1_tip_abonament);
+            panel_search.Controls.Add(button_cautare_antrenor);
+            panel_search.Controls.Add(button_cautare);
+            panel_search.Controls.Add(textBox_cautare_prenume);
+            panel_search.Controls.Add(textBox_cautare_nume);
+            panel_search.Controls.Add(label_prenume_cautare);
+            panel_search.Controls.Add(label_nume_cautare);
+            panel_search.Controls.Add(dataGridView_cautare_rezultat);
+            panel_search.Controls.Add(label_search);
+            panel_search.Location = new Point(40, 131);
+            panel_search.Name = "panel_search";
+            panel_search.Size = new Size(1340, 700);
+            panel_search.TabIndex = 18;
+            // 
+            // textBox_tip_abonament
+            // 
+            textBox_tip_abonament.Location = new Point(853, 203);
+            textBox_tip_abonament.Name = "textBox_tip_abonament";
+            textBox_tip_abonament.Size = new Size(150, 31);
+            textBox_tip_abonament.TabIndex = 10;
+            // 
+            // label1_tip_abonament
+            // 
+            label1_tip_abonament.AutoSize = true;
+            label1_tip_abonament.Location = new Point(853, 142);
+            label1_tip_abonament.Name = "label1_tip_abonament";
+            label1_tip_abonament.Size = new Size(134, 25);
+            label1_tip_abonament.TabIndex = 9;
+            label1_tip_abonament.Text = "Tip_abonament";
+            // 
+            // button_cautare_antrenor
+            // 
+            button_cautare_antrenor.Location = new Point(450, 303);
+            button_cautare_antrenor.Name = "button_cautare_antrenor";
+            button_cautare_antrenor.Size = new Size(181, 34);
+            button_cautare_antrenor.TabIndex = 7;
+            button_cautare_antrenor.Text = "Cautare Antrenor";
+            button_cautare_antrenor.UseVisualStyleBackColor = true;
+            button_cautare_antrenor.Click += button_cautare_antrenor_Click;
+            // 
+            // button_cautare
+            // 
+            button_cautare.Location = new Point(154, 303);
+            button_cautare.Name = "button_cautare";
+            button_cautare.Size = new Size(162, 34);
+            button_cautare.TabIndex = 6;
+            button_cautare.Text = "Cautare Membru";
+            button_cautare.UseVisualStyleBackColor = true;
+            button_cautare.Click += button_cautare_Click;
+            // 
+            // textBox_cautare_prenume
+            // 
+            textBox_cautare_prenume.Location = new Point(525, 203);
+            textBox_cautare_prenume.Name = "textBox_cautare_prenume";
+            textBox_cautare_prenume.Size = new Size(150, 31);
+            textBox_cautare_prenume.TabIndex = 5;
+            // 
+            // textBox_cautare_nume
+            // 
+            textBox_cautare_nume.Location = new Point(166, 211);
+            textBox_cautare_nume.Name = "textBox_cautare_nume";
+            textBox_cautare_nume.Size = new Size(150, 31);
+            textBox_cautare_nume.TabIndex = 4;
+            // 
+            // label_prenume_cautare
+            // 
+            label_prenume_cautare.AutoSize = true;
+            label_prenume_cautare.Location = new Point(525, 142);
+            label_prenume_cautare.Name = "label_prenume_cautare";
+            label_prenume_cautare.Size = new Size(82, 25);
+            label_prenume_cautare.TabIndex = 3;
+            label_prenume_cautare.Text = "Prenume";
+            // 
+            // label_nume_cautare
+            // 
+            label_nume_cautare.AutoSize = true;
+            label_nume_cautare.Location = new Point(186, 142);
+            label_nume_cautare.Name = "label_nume_cautare";
+            label_nume_cautare.Size = new Size(60, 25);
+            label_nume_cautare.TabIndex = 2;
+            label_nume_cautare.Text = "Nume";
+            // 
+            // dataGridView_cautare_rezultat
+            // 
+            dataGridView_cautare_rezultat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_cautare_rezultat.Location = new Point(61, 370);
+            dataGridView_cautare_rezultat.Name = "dataGridView_cautare_rezultat";
+            dataGridView_cautare_rezultat.RowHeadersWidth = 62;
+            dataGridView_cautare_rezultat.Size = new Size(1169, 225);
+            dataGridView_cautare_rezultat.TabIndex = 1;
+            // 
+            // label_search
+            // 
+            label_search.AutoSize = true;
+            label_search.Location = new Point(571, 43);
+            label_search.Name = "label_search";
+            label_search.Size = new Size(72, 25);
+            label_search.TabIndex = 0;
+            label_search.Text = "Cautare";
+            // 
             // Coach_p
             // 
             Coach_p.Controls.Add(Save_btn_coach);
@@ -577,7 +675,7 @@
             Coach_p.Controls.Add(label_namecoach);
             Coach_p.Controls.Add(Lastname_Coach);
             Coach_p.Controls.Add(Coach_t);
-            Coach_p.Location = new Point(41, 131);
+            Coach_p.Location = new Point(1664, 162);
             Coach_p.Name = "Coach_p";
             Coach_p.Size = new Size(1340, 700);
             Coach_p.TabIndex = 2;
@@ -676,7 +774,7 @@
             Memberships_p.Controls.Add(textBox_pretAbonamente);
             Memberships_p.Controls.Add(label_numeabonament);
             Memberships_p.Controls.Add(label5);
-            Memberships_p.Location = new Point(41, 131);
+            Memberships_p.Location = new Point(1518, 556);
             Memberships_p.Name = "Memberships_p";
             Memberships_p.Size = new Size(1340, 700);
             Memberships_p.TabIndex = 10;
@@ -830,11 +928,21 @@
             button_receptionist.UseVisualStyleBackColor = true;
             button_receptionist.Click += button_receptionist_Click;
             // 
+            // button_cautare_abonamente
+            // 
+            button_cautare_abonamente.Location = new Point(839, 303);
+            button_cautare_abonamente.Name = "button_cautare_abonamente";
+            button_cautare_abonamente.Size = new Size(230, 34);
+            button_cautare_abonamente.TabIndex = 11;
+            button_cautare_abonamente.Text = "Cautare abonamente";
+            button_cautare_abonamente.UseVisualStyleBackColor = true;
+            button_cautare_abonamente.Click += button_cautare_abonamente_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1388, 844);
+            ClientSize = new Size(1839, 1145);
             Controls.Add(Members_p);
             Controls.Add(panel_r);
             Controls.Add(Coach_p);
@@ -858,6 +966,7 @@
             Inscriere_p.PerformLayout();
             panel_search.ResumeLayout(false);
             panel_search.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_cautare_rezultat).EndInit();
             Coach_p.ResumeLayout(false);
             Coach_p.PerformLayout();
             Memberships_p.ResumeLayout(false);
@@ -946,5 +1055,15 @@
         private ComboBox comboBox1_gen_inscriere;
         private Label label10;
         private Button button1_save_date_excel;
+        private DataGridView dataGridView_cautare_rezultat;
+        private Button button_cautare;
+        private TextBox textBox_cautare_prenume;
+        private TextBox textBox_cautare_nume;
+        private Label label_prenume_cautare;
+        private Label label_nume_cautare;
+        private Button button_cautare_antrenor;
+        private TextBox textBox_tip_abonament;
+        private Label label1_tip_abonament;
+        private Button button_cautare_abonamente;
     }
 }
