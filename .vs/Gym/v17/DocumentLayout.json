@@ -3,19 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\servicii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\servicii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|c:\\users\\yusef16\\desktop\\sem 6\\tmpp\\gym\\tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F30C5C57-FBF6-4465-B4F9-4E26713864B9}|Tmpp\\Tmpp.csproj|solutionrelative:tmpp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/YUSEF/tmpp/True/SqlTable/dbo.Abonamente.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,55 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.Abonamente [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/YUSEF/tmpp/True/SqlTable/dbo.Abonamente.sql",
-              "ToolTip": "dbo.Abonamente [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-22T09:42:42.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Search.cs",
-              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Search.cs",
-              "RelativeDocumentMoniker": "Tmpp\\Search.cs",
-              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Search.cs",
-              "RelativeToolTip": "Tmpp\\Search.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAwwJwAAAA3AAAA",
+              "Title": "Servicii.cs",
+              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Servicii.cs",
+              "RelativeDocumentMoniker": "Tmpp\\Servicii.cs",
+              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Servicii.cs",
+              "RelativeToolTip": "Tmpp\\Servicii.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T08:40:49.889Z",
+              "WhenOpened": "2024-05-23T23:10:56.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
-              "RelativeDocumentMoniker": "Tmpp\\Form1.cs",
-              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
-              "RelativeToolTip": "Tmpp\\Form1.cs",
-              "ViewState": "AQIAAI4CAAAAAAAAAAAAAKwCAAA/AAAA",
+              "Title": "Search.cs",
+              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Search.cs",
+              "RelativeDocumentMoniker": "Tmpp\\Search.cs",
+              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Search.cs",
+              "RelativeToolTip": "Tmpp\\Search.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAwwIkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T23:27:33.722Z",
+              "WhenOpened": "2024-05-22T08:40:49.889Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs",
-              "RelativeDocumentMoniker": "Tmpp\\Form1.cs",
-              "ToolTip": "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\Gym\\Tmpp\\Form1.cs [Design]",
-              "RelativeToolTip": "Tmpp\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T23:27:09.522Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -17,7 +17,7 @@ namespace Tmpp
             Get_coach_list();
             load_data_abonamente();
 
-            /*CurrentUser currentUser = CurrentUser.Instance;
+            CurrentUser currentUser = CurrentUser.Instance;
             string user = currentUser.GetCurrentUser();
             MessageBox.Show(user);
             load_data();
@@ -53,7 +53,7 @@ namespace Tmpp
 
 
 
-            }*/
+            }
 
 
 
@@ -666,7 +666,7 @@ namespace Tmpp
         // cautare abonamente
         private void button_cautare_abonamente_Click(object sender, EventArgs e)
         {
-            if (textBox_tip_abonament.Text == "" )
+            if (textBox_tip_abonament.Text == "")
             {
                 MessageBox.Show("Completeaza campul cu tipul de abonamente");
             }
@@ -675,12 +675,12 @@ namespace Tmpp
                 string query = "Select * From Abonamente Where Tipabonament = @tip";
 
                 string tip = textBox_tip_abonament.Text;
-                
+
 
                 List<string> date = new List<string>();
 
                 date.Add(tip);
-                
+
 
                 SearchTemplate search = new MembershipSearch();
                 DataTable dt = search.Search(query, connectionString, date);
@@ -689,6 +689,17 @@ namespace Tmpp
                 date.Clear();
 
             }
+        }
+
+        private void button_membri_excel_membri_Click(object sender, EventArgs e)
+        {
+            string tableName = "Membri";
+            string excelFilePath = "C:\\Users\\yusef16\\Desktop\\sem 6\\TMPP\\1.xlsx";
+
+            ITableAdapter tableAdapter = new SqlTableAdapter(connectionString);
+            tableAdapter.ConvertTableToExcel(tableName, excelFilePath);
+
+            MessageBox.Show("Fisierul s-a creat");
         }
     }
 }

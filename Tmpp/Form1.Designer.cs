@@ -30,6 +30,7 @@
         {
             Members_t = new Label();
             Members_p = new Panel();
+            button_membri_excel_membri = new Button();
             comboBox_genre = new ComboBox();
             label3 = new Label();
             Save_btn_members = new Button();
@@ -44,7 +45,6 @@
             panel_r = new Panel();
             textBox1_email_receptionist = new TextBox();
             label9 = new Label();
-            button_delete_receptionist = new Button();
             textBox_nrtelefon_receptionist = new TextBox();
             label_nrtelefon_receptionist = new Label();
             textBox_username_receptionist = new TextBox();
@@ -75,6 +75,7 @@
             label4 = new Label();
             label6 = new Label();
             panel_search = new Panel();
+            button_cautare_abonamente = new Button();
             textBox_tip_abonament = new TextBox();
             label1_tip_abonament = new Label();
             button_cautare_antrenor = new Button();
@@ -113,7 +114,6 @@
             button_search = new Button();
             panel1 = new Panel();
             button_receptionist = new Button();
-            button_cautare_abonamente = new Button();
             Members_p.SuspendLayout();
             panel_r.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_receptionist).BeginInit();
@@ -137,6 +137,7 @@
             // 
             // Members_p
             // 
+            Members_p.Controls.Add(button_membri_excel_membri);
             Members_p.Controls.Add(comboBox_genre);
             Members_p.Controls.Add(label3);
             Members_p.Controls.Add(Save_btn_members);
@@ -149,10 +150,20 @@
             Members_p.Controls.Add(Name_members);
             Members_p.Controls.Add(Lastname_members);
             Members_p.Controls.Add(Members_t);
-            Members_p.Location = new Point(1568, 60);
+            Members_p.Location = new Point(17, 138);
             Members_p.Name = "Members_p";
-            Members_p.Size = new Size(1340, 700);
+            Members_p.Size = new Size(1349, 700);
             Members_p.TabIndex = 1;
+            // 
+            // button_membri_excel_membri
+            // 
+            button_membri_excel_membri.Location = new Point(748, 508);
+            button_membri_excel_membri.Name = "button_membri_excel_membri";
+            button_membri_excel_membri.Size = new Size(166, 73);
+            button_membri_excel_membri.TabIndex = 14;
+            button_membri_excel_membri.Text = "Toti membrii excel";
+            button_membri_excel_membri.UseVisualStyleBackColor = true;
+            button_membri_excel_membri.Click += button_membri_excel_membri_Click;
             // 
             // comboBox_genre
             // 
@@ -174,7 +185,7 @@
             // 
             // Save_btn_members
             // 
-            Save_btn_members.Location = new Point(542, 513);
+            Save_btn_members.Location = new Point(341, 508);
             Save_btn_members.Name = "Save_btn_members";
             Save_btn_members.Size = new Size(181, 73);
             Save_btn_members.TabIndex = 11;
@@ -250,7 +261,6 @@
             // 
             panel_r.Controls.Add(textBox1_email_receptionist);
             panel_r.Controls.Add(label9);
-            panel_r.Controls.Add(button_delete_receptionist);
             panel_r.Controls.Add(textBox_nrtelefon_receptionist);
             panel_r.Controls.Add(label_nrtelefon_receptionist);
             panel_r.Controls.Add(textBox_username_receptionist);
@@ -266,7 +276,7 @@
             panel_r.Controls.Add(textBox_nume_receptionist);
             panel_r.Controls.Add(label_nume_receptionist);
             panel_r.Controls.Add(label_receptionist);
-            panel_r.Location = new Point(1736, 92);
+            panel_r.Location = new Point(17, 138);
             panel_r.Name = "panel_r";
             panel_r.Size = new Size(1340, 700);
             panel_r.TabIndex = 15;
@@ -288,15 +298,6 @@
             label9.TabIndex = 16;
             label9.Text = "Email";
             label9.Click += label9_Click;
-            // 
-            // button_delete_receptionist
-            // 
-            button_delete_receptionist.Location = new Point(684, 617);
-            button_delete_receptionist.Name = "button_delete_receptionist";
-            button_delete_receptionist.Size = new Size(112, 34);
-            button_delete_receptionist.TabIndex = 15;
-            button_delete_receptionist.Text = "Delete";
-            button_delete_receptionist.UseVisualStyleBackColor = true;
             // 
             // textBox_nrtelefon_receptionist
             // 
@@ -440,7 +441,7 @@
             Inscriere_p.Controls.Add(button_inscriere);
             Inscriere_p.Controls.Add(label4);
             Inscriere_p.Controls.Add(label6);
-            Inscriere_p.Location = new Point(1626, 365);
+            Inscriere_p.Location = new Point(17, 138);
             Inscriere_p.Name = "Inscriere_p";
             Inscriere_p.Size = new Size(1340, 700);
             Inscriere_p.TabIndex = 12;
@@ -572,10 +573,20 @@
             panel_search.Controls.Add(label_nume_cautare);
             panel_search.Controls.Add(dataGridView_cautare_rezultat);
             panel_search.Controls.Add(label_search);
-            panel_search.Location = new Point(40, 131);
+            panel_search.Location = new Point(17, 138);
             panel_search.Name = "panel_search";
             panel_search.Size = new Size(1340, 700);
             panel_search.TabIndex = 18;
+            // 
+            // button_cautare_abonamente
+            // 
+            button_cautare_abonamente.Location = new Point(839, 303);
+            button_cautare_abonamente.Name = "button_cautare_abonamente";
+            button_cautare_abonamente.Size = new Size(230, 34);
+            button_cautare_abonamente.TabIndex = 11;
+            button_cautare_abonamente.Text = "Cautare abonamente";
+            button_cautare_abonamente.UseVisualStyleBackColor = true;
+            button_cautare_abonamente.Click += button_cautare_abonamente_Click;
             // 
             // textBox_tip_abonament
             // 
@@ -675,7 +686,7 @@
             Coach_p.Controls.Add(label_namecoach);
             Coach_p.Controls.Add(Lastname_Coach);
             Coach_p.Controls.Add(Coach_t);
-            Coach_p.Location = new Point(1664, 162);
+            Coach_p.Location = new Point(17, 138);
             Coach_p.Name = "Coach_p";
             Coach_p.Size = new Size(1340, 700);
             Coach_p.TabIndex = 2;
@@ -774,7 +785,7 @@
             Memberships_p.Controls.Add(textBox_pretAbonamente);
             Memberships_p.Controls.Add(label_numeabonament);
             Memberships_p.Controls.Add(label5);
-            Memberships_p.Location = new Point(1518, 556);
+            Memberships_p.Location = new Point(17, 138);
             Memberships_p.Name = "Memberships_p";
             Memberships_p.Size = new Size(1340, 700);
             Memberships_p.TabIndex = 10;
@@ -911,7 +922,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.BackColor = Color.DarkKhaki;
             panel1.Controls.Add(button_receptionist);
             panel1.Location = new Point(17, 11);
             panel1.Name = "panel1";
@@ -928,21 +939,11 @@
             button_receptionist.UseVisualStyleBackColor = true;
             button_receptionist.Click += button_receptionist_Click;
             // 
-            // button_cautare_abonamente
-            // 
-            button_cautare_abonamente.Location = new Point(839, 303);
-            button_cautare_abonamente.Name = "button_cautare_abonamente";
-            button_cautare_abonamente.Size = new Size(230, 34);
-            button_cautare_abonamente.TabIndex = 11;
-            button_cautare_abonamente.Text = "Cautare abonamente";
-            button_cautare_abonamente.UseVisualStyleBackColor = true;
-            button_cautare_abonamente.Click += button_cautare_abonamente_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1839, 1145);
+            ClientSize = new Size(1388, 856);
             Controls.Add(Members_p);
             Controls.Add(panel_r);
             Controls.Add(Coach_p);
@@ -1035,7 +1036,6 @@
         private Button button_save_receptionist;
         private Label label_admin;
         private Label label_nrtelefon_receptionist;
-        private Button button_delete_receptionist;
         private TextBox textBox_nrtelefon_receptionist;
         private TextBox textBox1_email_receptionist;
         private Label label9;
@@ -1065,5 +1065,6 @@
         private TextBox textBox_tip_abonament;
         private Label label1_tip_abonament;
         private Button button_cautare_abonamente;
+        private Button button_membri_excel_membri;
     }
 }
